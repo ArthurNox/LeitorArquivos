@@ -56,7 +56,7 @@ input.addEventListener('change', function(e) {
 			var vendedores = counter(vndor)
 			var clientes = counter(client)
 			var piorVendedor = worseVndor(vndor)
-			var venda = bestSale(vnda)
+			//var venda = bestSale(vnda)
 
 			fileDisplayClientes.innerText = clientes;
 			fileDisplayVendedores.innerText = vendedores;
