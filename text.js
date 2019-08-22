@@ -1,7 +1,7 @@
-function counter (lista){
+function counter(lista){
 	return lista.length;
 }
-function worseVndor (lista){
+function worseVndor(lista){
 	let salary = lista[0][3]
 	let worse = lista[0][2]
 	for(i = 0; i < lista.length; i++ ){
@@ -12,7 +12,7 @@ function worseVndor (lista){
 	}
 	return worse;
 }
-function bestSale(lista){
+/*function bestSale(lista){
 	let best = lista[0][2][3]
 
 	for(i = 0; i < lista.length; i++ ){
@@ -21,7 +21,7 @@ function bestSale(lista){
 		}		
 	}
 	return best;
-}
+}*/
 
 const input =
 document.querySelector('input[type="file"]')
@@ -61,10 +61,10 @@ input.addEventListener('change', function(e) {
 			fileDisplayClientes.innerText = clientes;
 			fileDisplayVendedores.innerText = vendedores;
 			fileDisplayPVendedor.innerText = piorVendedor;
-			fileDisplayMVenda.innerText = venda;
+			//fileDisplayMVenda.innerText = venda;
 
 			//fileDisplayArea.innerText = clientes;
-			//console.log(lines)
+			console.log(lines)
         }
         reader.readAsText(input.files[0])
 } ,false)
