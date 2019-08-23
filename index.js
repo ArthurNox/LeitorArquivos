@@ -12,8 +12,8 @@ function worseVndor(lista){
 	}
 	return worse;
 }
-/*function bestSale(lista){
-	let best = lista[0][2][3]
+function bestSale(lista){
+	let best
 
 	for(i = 0; i < lista.length; i++ ){
 		if(best < lista[i][0]){
@@ -21,7 +21,7 @@ function worseVndor(lista){
 		}		
 	}
 	return best;
-}*/
+}
 
 const input =
 document.querySelector('input[type="file"]')
@@ -56,12 +56,12 @@ input.addEventListener('change', function(e) {
 			var vendedores = counter(vndor)
 			var clientes = counter(client)
 			var piorVendedor = worseVndor(vndor)
-			//var venda = bestSale(vnda)
+			var venda = bestSale(vnda)
 
 			fileDisplayClientes.innerText = clientes;
 			fileDisplayVendedores.innerText = vendedores;
 			fileDisplayPVendedor.innerText = piorVendedor;
-			//fileDisplayMVenda.innerText = venda;
+			fileDisplayMVenda.innerText = venda;
 
 			//fileDisplayArea.innerText = clientes;
 			console.log(lines)
