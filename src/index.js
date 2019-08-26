@@ -61,7 +61,8 @@ input.addEventListener('change', function(e) {
 			var vendedores = counter(vndor)
 			var clientes = counter(client)
 			var piorVendedor = worseVndor(vndor)
-			var venda = 10 //bestSale(vnda)
+			var venda = 10 //bestSale(vnda) 
+
 
             ReactDOM.render(
                 <div>
