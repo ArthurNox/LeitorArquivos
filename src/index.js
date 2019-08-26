@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import  { Vendedor, Cliente, PiorVendedor, MelhorVenda } from './componentes/Multi'
+import  { Vendedor, Cliente, PiorVendedor, MelhorVenda} from './componentes/Multi'
 
 function counter(lista){
 	return lista.length;
@@ -17,21 +17,33 @@ function worseVndor(lista){
 	}
 	return worse;
 }
-function bestSale(lista){
-	let best
+function bestSale(lista){	
+	let sale = 0
+	let best = 0
 
-	for(let i = 0; i < lista.length; i++ ){
-		if(best < lista[i][0]){
-			best = lista[i][0]
+	for(let i = 0; i < lista.length; i++){
+		if(lista[i][2]){
+			
+			lista[i][2] = lista[i][2].split("[").join("").split("]").join("").split('-')
+			
 		}		
 	}
-	return best;
+
+	 for(let i = 0; i < lista.length; i++ ){
+	 	if(sale < lista[i][2][6]){
+
+	  		sale = lista[i][2][6]
+	  		best = lista[i][1]
+	 	}		
+	  }
+
+		return best;
 }
 
 const input =
 document.querySelector('input[type="file"]')
 input.addEventListener('change', function(e) {
-        console.log(input.files)
+        //console.log(input.files)
 
 		var vnda = []
 		var vndor = []
@@ -61,15 +73,14 @@ input.addEventListener('change', function(e) {
 			var vendedores = counter(vndor)
 			var clientes = counter(client)
 			var piorVendedor = worseVndor(vndor)
-			var venda = 10 //bestSale(vnda) 
-
+			var venda = bestSale(vnda) 
 
             ReactDOM.render(
                 <div>
                     <Cliente nome="Número de Clientes" valor={clientes}/>
                     <Vendedor nome="Número de Vendedores" valor={vendedores}/>
                     <PiorVendedor nome="Pior Vendedor" valor={piorVendedor}/>
-                    <MelhorVenda nome="ID da Melhor Venda" valor={venda}/>
+					<MelhorVenda nome= "ID Venda" valor={venda}/>
                 </div>
             , document.getElementById('root'))
 

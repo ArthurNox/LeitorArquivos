@@ -20,7 +20,7 @@ export const PiorVendedor =  props =>
     </div>
     
 export const MelhorVenda =  props => 
-<div>
-    <h3>{props.nome}</h3>
-    <p>{props.valor}</p>
-</div>
+    <div>
+        <h3>{props.nome}</h3>
+        <p>{props.valor}</p>
+    </div>
